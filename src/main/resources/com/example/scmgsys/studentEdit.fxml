@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scmgsys.StudentEditController">
+   <children>
+      <ImageView fx:id="cardImg" fitHeight="183.0" fitWidth="198.0" layoutX="53.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="297.0" layoutY="65.0" prefHeight="28.0" prefWidth="114.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="93.0" prefHeight="28.0" prefWidth="114.0" text="First name:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="121.0" prefHeight="28.0" prefWidth="114.0" text="Last name:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="149.0" prefHeight="28.0" prefWidth="114.0" text="Section:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="177.0" prefHeight="28.0" prefWidth="114.0" text="Date of birth:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="205.0" prefHeight="28.0" prefWidth="114.0" text="Email:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="233.0" prefHeight="28.0" prefWidth="114.0" text="Month hours:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="261.0" prefHeight="28.0" prefWidth="114.0" text="Total hours:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fnameField" layoutX="411.0" layoutY="94.0" prefHeight="26.0" prefWidth="176.0" promptText="first name" />
+      <TextField fx:id="lnameField" layoutX="411.0" layoutY="122.0" prefHeight="26.0" prefWidth="176.0" promptText="last name" />
+      <TextField fx:id="sectionField" layoutX="411.0" layoutY="150.0" prefHeight="26.0" prefWidth="176.0" promptText="section" />
+      <TextField fx:id="emailField" layoutX="411.0" layoutY="206.0" prefHeight="26.0" prefWidth="176.0" promptText="email" />
+      <TextField fx:id="monthField" layoutX="411.0" layoutY="234.0" prefHeight="26.0" prefWidth="176.0" promptText="month hours" />
+      <TextField fx:id="totalField" layoutX="411.0" layoutY="262.0" prefHeight="26.0" prefWidth="176.0" promptText="total hours" />
+      <Label fx:id="idLabel" layoutX="411.0" layoutY="66.0" prefHeight="26.0" prefWidth="176.0" text="...">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="106.0" layoutY="262.0" mnemonicParsing="false" onAction="#choosingPhoto" text="Choose photo" />
+      <Button layoutX="216.0" layoutY="309.0" mnemonicParsing="false" onAction="#submitChanges" prefHeight="42.0" prefWidth="168.0" text="Sumbit changes">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="355.0" prefHeight="30.0" prefWidth="383.0" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dobField" layoutX="411.0" layoutY="178.0" />
+   </children>
+</AnchorPane>

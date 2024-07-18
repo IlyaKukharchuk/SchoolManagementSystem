@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1305.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scmgsys.AdminsController">
+   <children>
+      <TabPane prefHeight="720.0" prefWidth="1305.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="All students">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="377.0" prefHeight="692.0" prefWidth="929.0" style="-fx-background-color: grey;">
+                           <children>
+                              <TableView fx:id="studenttable" prefHeight="692.0" prefWidth="928.0">
+                                <columns>
+                                  <TableColumn fx:id="idcolumn" prefWidth="78.39999389648438" text="ID" />
+                                  <TableColumn fx:id="firstnamecolumn" prefWidth="147.20001220703125" text="First name" />
+                                    <TableColumn fx:id="lastnamecolumn" prefWidth="138.39996337890625" text="Last name" />
+                                    <TableColumn fx:id="emailcolumn" prefWidth="165.5999755859375" text="Email" />
+                                    <TableColumn fx:id="dobcolumn" prefWidth="118.39996337890625" text="DOB" />
+                                    <TableColumn fx:id="sectioncolumn" prefWidth="69.5999755859375" text="Section" />
+                                    <TableColumn fx:id="hourscolumn" prefWidth="44.800048828125" text="Hours" />
+                                    <TableColumn fx:id="monthhourscolumn" prefWidth="74.4000244140625" text="Monthhours" />
+                                    <TableColumn fx:id="imgcolumn" prefWidth="89.60000000000002" text="Image" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="clrForm_btn" prefHeight="498.0" prefWidth="378.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="429.0" text="Add students" />
+                              <TextField fx:id="firstname" alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="30.0" prefWidth="378.0" promptText="First name">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="lastname" alignment="CENTER" layoutX="10.0" layoutY="76.0" prefHeight="30.0" prefWidth="378.0" promptText="Last name">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="email" alignment="CENTER" layoutX="10.0" layoutY="106.0" prefHeight="30.0" prefWidth="378.0" promptText="Email">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="dob" prefHeight="30.0" prefWidth="355.0" promptText="Date of birth">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <TextField fx:id="section" alignment="CENTER" prefHeight="30.0" prefWidth="378.0" promptText="Group">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addStudent" prefHeight="30.0" prefWidth="486.0" text="Add" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="317.0" mnemonicParsing="false" onAction="#clearField" prefHeight="30.0" prefWidth="486.0" text="Clear form" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="348.0" mnemonicParsing="false" onAction="#loadStudentData" prefHeight="30.0" prefWidth="486.0" text="Refresh table" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="383.0" textAlignment="CENTER" underline="true">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="276.0" startX="-100.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutY="498.0" prefHeight="146.0" prefWidth="378.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="429.0" text="Search students by last name" />
+                              <TextField fx:id="lnameSearchField" alignment="CENTER" prefHeight="30.0" prefWidth="378.0" promptText="Last name">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchByLastName" prefHeight="30.0" prefWidth="486.0" text="Search" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Line endX="276.0" startX="-100.0">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Line>
+                           </children>
+                        </VBox>
+                        <Label fx:id="date" alignment="CENTER" layoutY="650.0" prefHeight="26.0" prefWidth="378.0" text="Date" textFill="#2900ff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabGroup" text="Groups">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="662.0" prefWidth="378.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="429.0" text="Search group" />
+                              <TextField fx:id="sectionField2" prefHeight="30.0" promptText="type group">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#seacrhGroup" prefHeight="30.0" prefWidth="422.0" text="Search group" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showAllStudents" prefHeight="30.0" prefWidth="422.0" text="Show all students / Refresh" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#submitHours" prefHeight="30.0" prefWidth="422.0" text="Submit hours" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="statusLabel2" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="383.0" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <HBox layoutX="376.0" prefHeight="692.0" prefWidth="932.0">
+                           <children>
+                              <TableView fx:id="studenttable2" prefHeight="692.0" prefWidth="928.0">
+                                <columns>
+                                  <TableColumn fx:id="idcolumn2" prefWidth="68.79998779296875" text="Id" />
+                                  <TableColumn fx:id="firstnamecolumn2" prefWidth="179.99996948242188" text="First name" />
+                                    <TableColumn fx:id="lastnamecolumn2" prefWidth="196.800048828125" text="Last name" />
+                                    <TableColumn fx:id="sectioncolumn2" prefWidth="65.60003662109375" text="Section" />
+                                    <TableColumn fx:id="monthhourscolumn2" prefWidth="83.99993896484375" text="Month hours" />
+                                    <TableColumn fx:id="hourscolumn2" prefWidth="73.59991455078125" text="Total hours" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label fx:id="date2" alignment="CENTER" contentDisplay="CENTER" layoutY="649.0" prefHeight="26.0" prefWidth="376.0" text="Date" textAlignment="CENTER" textFill="#2900ff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Settings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle fx:id="settingsRectangle" arcHeight="5.0" arcWidth="5.0" fill="#dddddd" height="322.0" layoutX="400.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="507.0" />
+                        <VBox layoutX="459.0" layoutY="283.0" prefHeight="122.0" prefWidth="388.0">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#aboutbtn" prefHeight="30.0" prefWidth="388.0" text="Help/ about" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="logoutbtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="388.0" text="Log out" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="317.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scmgsys.AboutController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="600.0" text="About" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="107.0" prefHeight="147.0" prefWidth="546.0" text="This application is created for student attendance. Namely, in the table you can see updated data from the database. The student can track how many passes he has, and the teacher can indicate the passes and edit information about students, as well as add new ones to the database." wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="283.0" prefHeight="15.0" prefWidth="574.0" text="2023, CREATED BY ILYA KUKHARCHUK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1305.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scmgsys.StudentsController">
+   <children>
+      <TabPane prefHeight="760.0" prefWidth="1306.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabGroup" text="Students">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="378.0" prefHeight="760.0" prefWidth="928.0">
+                           <children>
+                              <TableView fx:id="studenttable" prefHeight="760.0" prefWidth="928.0">
+                                <columns>
+                                  <TableColumn fx:id="fnamecolumn" prefWidth="296.0" text="First name" />
+                                  <TableColumn fx:id="lnamecolumn" prefWidth="376.00006103515625" text="Last name" />
+                                    <TableColumn fx:id="groupcolumn" prefWidth="83.199951171875" text="Group" />
+                                    <TableColumn fx:id="monthhourscolumn" prefWidth="90.40008544921875" text="Month hours" />
+                                    <TableColumn fx:id="totalhourscolumn" prefWidth="82.4000244140625" text="Total hours" />
+                                    <TableColumn fx:id="totalhourscolumn1" prefWidth="82.4000244140625" text="Total hours" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="686.0" prefWidth="378.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="429.0" text="Search" />
+                              <TextField fx:id="lnameField" prefHeight="30.0" prefWidth="378.0" promptText="Last name">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchByLastName" prefHeight="30.0" prefWidth="426.0" text="Search by last name">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <TextField fx:id="groupField" prefHeight="30.0" prefWidth="378.0" promptText="Group">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchByGroup" prefHeight="30.0" prefWidth="426.0" text="Search by group" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearFields" prefHeight="30.0" prefWidth="426.0" text="Clear Fields" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="40.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#refreshTableVIew" prefHeight="30.0" prefWidth="426.0" text="Refresh table" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="383.0" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label fx:id="date" alignment="CENTER" layoutY="690.0" prefHeight="26.0" prefWidth="378.0" text="Date" textFill="#2900ff">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Settings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle fx:id="settingsRectangle" arcHeight="5.0" arcWidth="5.0" fill="#dddddd" height="322.0" layoutX="400.0" layoutY="205.0" stroke="BLACK" strokeType="INSIDE" width="507.0" />
+                        <VBox layoutX="460.0" layoutY="305.0" prefHeight="122.0" prefWidth="388.0">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#aboutbtn" prefHeight="30.0" prefWidth="388.0" text="Help / About" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="388.0" text="Log out" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
